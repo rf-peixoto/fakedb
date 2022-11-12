@@ -3,9 +3,10 @@ from base64 import b64encode
 from secrets import token_urlsafe
 from random import choice
 
-# Setup:
-total = 2036
-domain = "@domain.com"
+# Number of emails you want:
+total = 60000
+# Possible domains. If you do not want more than one, remove all the other from this list.
+domain = ["test.com", "test.net", "test.org"]
 tmp_list = []
 
 # Files:
@@ -21,7 +22,7 @@ while counter <= total:
         # Email:
         name = choice(first).lower()[0]
         surname = choice(last).lower()
-        email = "{0}{1}{2}".format(name, surname, domain)
+        email = "{0}{1}@{2}".format(name, surname, choice(domain))
         # Password:
         salt = token_urlsafe(16)
         salt64 = b64encode(salt.encode())
