@@ -7,6 +7,7 @@ from random import choice
 total = 60000
 # Possible domains. If you do not want more than one, remove all the other from this list.
 domain = ["test.com", "test.net", "test.org"]
+# Temp list for our database:
 tmp_list = []
 
 # Files:
